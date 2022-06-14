@@ -1,0 +1,22 @@
+{
+  "name": "tschannel",
+  "version": "1.0.0",
+  "description": "Create a multi-channel forum api. Can use any stack, but must use typescript, be deployable, and of production quality. Try using graphql or grpc for fun, but REST is ok too. Try using docker containers for fun if you want. Show how you would like to write documentation and testing if possible.",
+  "main": "MultiChannel.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.1",
+    "jest": "^28.1.1",
+    "ts-jest": "^28.0.5"
+  }
+}
