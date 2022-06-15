@@ -2,10 +2,13 @@
   "name": "tschannel",
   "version": "1.0.0",
   "description": "Create a multi-channel forum api. Can use any stack, but must use typescript, be deployable, and of production quality. Try using graphql or grpc for fun, but REST is ok too. Try using docker containers for fun if you want. Show how you would like to write documentation and testing if possible.",
-  "main": "MultiChannel.js",
+  "main": "bulid/MultiChannel.js",
+  "files": [
+    "bulid/**/*"
+  ],
   "scripts": {
     "test": "jest",
-    "build": "tsc"
+    "build": "tsc -p tsconfig.build.json"
   },
   "keywords": [],
   "author": "",
