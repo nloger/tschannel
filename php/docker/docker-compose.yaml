@@ -1,0 +1,11 @@
+version: '3.6'
+services:
+  ubuntu_apache_php:
+    container_name: apache_php
+    image: 684faac04636
+    security_opt:
+      - seccomp=unconfined
+    command: bash
+    ports:
+      - 8086:80
+    tty: true
