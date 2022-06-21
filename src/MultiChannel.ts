@@ -6,15 +6,6 @@ export enum enumSortBy {
 	content = "content"
 }
 
-
-
-export interface IListParams{
-    channelId: number;
-    start?: number ;
-    end?: number ;
-    keyToSortBy?: enumSortBy;
-}
-
 export class MultiChannel {
     channels: Map<number, Channel>;
 
@@ -51,7 +42,7 @@ export class MultiChannel {
         this.channels.get(channelId)?.msg.push(objMsg);
     }
 
-
+    // list message
     ListMsg(channelId: number,  start? : number , end?: number, keyToSortBy = enumSortBy.title) {
         if (!this.channels.has(channelId)){
             throw Error("ListMsg: channelId does not exist");
@@ -66,27 +57,4 @@ export class MultiChannel {
 
         return msglist?.slice(start, end);
     }
-
-    /*
-    ListMsg(iParams: IListParams, name: string) {
-        if (!this.channels.has(iParams.channelId)){
-            throw Error("ListMsg: channelId does not exist");
-        }
-
-        let msglist = this.channels.get(iParams.channelId)?.msg;
-        let keyToSortBy = iParams.keyToSortBy == undefined ? enumSortBy.title : iParams.keyToSortBy;
-        if (keyToSortBy == enumSortBy.title){
-            msglist?.sort((a, b) => a.title < b.title ? 1 : -1 );
-        } else if(keyToSortBy == enumSortBy.content){
-            msglist?.sort((a, b) => a.content < b.content ? 1 : -1 );
-        }
-
-        return msglist?.slice(iParams.start, iParams.end);
-    }
-    
-*/
-
-
-
-
 }
