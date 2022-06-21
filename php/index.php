@@ -16,7 +16,7 @@ include_once("Flights.class.php");
 	
 	if (empty($from) || empty($to))
 	{
-		echo "«Î«Û∏Ò Ω: GET http://host?from=TPE&to=SFO <br/>";
+		echo "query format: GET http://host?from=TPE&to=SFO <br/>";
 		exit();
 	}
 	
