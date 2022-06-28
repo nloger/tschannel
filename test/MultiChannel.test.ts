@@ -76,6 +76,11 @@ describe("MultiChannel unit test", () => {
         expect(()=>{
             mc.WriteTo(new ChannelMessage(1, "", "", 5, new Date()))
         }).toThrowError(/channelId does not exist/);
+
+        
+        expect(()=>{
+            mc.WriteTo(new ChannelMessage(1, "", "", 1, new Date()))
+        }).toThrowError(/msgId duplicate/);
         
         expect(()=>{
             mc.ListMsg(5)

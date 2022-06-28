@@ -38,6 +38,13 @@ export class MultiChannel {
         if (!this.channels.has(channelId)){
             throw Error("WriteTo: channelId does not exist");
         }
+        
+        let msgId = objMsg.msgId;
+        let bIsHasMsgId = this.channels.get(channelId)?.msg.some((value, index, array)=>{return value.msgId == msgId});
+
+        if (bIsHasMsgId){
+            throw Error("WriteTo: msgId duplicate");
+        }
 
         this.channels.get(channelId)?.msg.push(objMsg);
     }
