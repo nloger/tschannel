@@ -6,6 +6,11 @@
   - 执行npm run build 编译
   - 进入graphql目录，执行node svr.js 启动graphql服务
   
+- 工程目录说明
+  - src目录存放multi-channel代码
+  - build是npm run build生成的代码  
+  - graphql服务的代码，依赖build目录下生成的代码  
+  
 ## Docker说明
   - npm run build编译完成后，修改docker-compose.yaml文件中volumes:项的本地目录位置(例：tschannel项目在C:\Users\tschannel, 配置成/c/Users:/home/node/app)，确保docker可以访问到tschannel项目文件
   - 执行docker-compose up -d 启动 
