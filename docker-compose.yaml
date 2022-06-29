@@ -1,0 +1,20 @@
+version: "2"
+services:
+  node:
+    image: "node:16"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - /c/Users:/home/node/app
+    ports:
+      - "5000:5000"
+    command:
+      - /bin/bash
+      - -c
+      - |
+        cd tschannel/graphql
+        node svr.js
+      
+    tty: true
